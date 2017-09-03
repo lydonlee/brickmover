@@ -83,6 +83,7 @@ class Advisor:
         buy_price_rate = 1.001
         sell_price_rate = 0.999
         buy_price = round(buy_account.ticker.buy_price * buy_price_rate, 2)
+        print "liligong: should be sell price"
         sell_price = round(sell_account.ticker.buy_price * sell_price_rate, 2)
         buy_amount = buy_price * self.qty_per_order
         sell_amount = round(sell_price * self.qty_per_order, 2)

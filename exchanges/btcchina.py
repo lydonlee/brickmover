@@ -13,8 +13,8 @@ import urllib, urllib2
 import cookielib
 import logging
 
-from brickmover import config
-from brickmover.info import *
+import config
+from info import *
 
 class BtcChinaInterface():
     def __init__(self,access=None,secret=None):
@@ -198,7 +198,7 @@ class BtcChinaExchange:
         pass
 
     def login(self):
-        '''
+      
         
         if self._last_logged_time and ((datetime.datetime.now() - self._last_logged_time).total_seconds() < BtcChinaExchange.session_period * 60):
             return
@@ -217,7 +217,7 @@ class BtcChinaExchange:
         response = self.opener.open(login_url, login_data)
         self.cookieJar.save()
         response.close()
-        '''
+      
         pass
 
     def request_ticker(self):
@@ -226,6 +226,7 @@ class BtcChinaExchange:
         ticker_data = json.loads(response.read())['ticker']
         ticker = Ticker(float(ticker_data['buy']), float(ticker_data['sell']), float(ticker_data['last']))
         return ticker
+
 
     def request_info(self):
         self._logger.info(u'准备开始请求 btcchina.com 帐号信息')

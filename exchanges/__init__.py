@@ -17,11 +17,11 @@ import okcoin
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from brickmover import config
+import config
 
 cfg = config.configuration['exchanges']
 actived_exchanges = {'btcchina': btcchina.BtcChinaExchange(cfg['btcchina']), 'okcoin': okcoin.OKCoinExchange(cfg['okcoin'])}
-
+print cfg['okcoin']
 _logger = logging.getLogger('exchanges')
 
 

@@ -170,8 +170,6 @@ def main_loop(stop_event):
 if __name__ == '__main__':
     mp.freeze_support()
     print 'The Most Awesome Automatic Arbitrage Bot for BitCoin Exchanges'
-    print 'Written By Wei Li <oldrev@gmail.com>'
-    print 'It is the time to make some money!'
     print '\n'
 
     stop_main_event = mp.Event()
